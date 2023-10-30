@@ -6,6 +6,16 @@ type Props = {
 };
 
 export function Gentleman({ cards }: Props) {
+  const handleAddButton = (ev: SyntheticEvent) => {
+    return '😺';
+  };
+
+  const handleDeleteButton = () => {
+    console.log('Deleted');
+
+    return '😺';
+  };
+
   return (
     <main className="main">
       <ul className="gentlemen">
@@ -36,8 +46,14 @@ export function Gentleman({ cards }: Props) {
                 </li>
               </ul>
             </div>
-            <i className="icon gentleman__icon fas fa-check"></i>
-            <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i>
+            <i
+              onClick={handleAddButton}
+              className="icon gentleman__icon fas fa-check"
+            ></i>
+            <i
+              onClick={handleDeleteButton}
+              className="icon gentleman__icon gentleman__icon--delete fas fa-times"
+            ></i>
           </li>
         ))}
       </ul>

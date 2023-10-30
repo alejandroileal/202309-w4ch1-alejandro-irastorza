@@ -41,7 +41,7 @@ export const gentlemanData: GentlemanType[] = [
     selected: true,
   },
   {
-    id: 3,
+    id: 4,
     name: 'John',
     status: 'Alive',
     profession: 'Java developer',
@@ -51,7 +51,7 @@ export const gentlemanData: GentlemanType[] = [
     selected: true,
   },
   {
-    id: 3,
+    id: 5,
     name: 'Kitten Dev',
     status: 'Alive',
     profession: 'Javascript developer',
@@ -61,3 +61,5 @@ export const gentlemanData: GentlemanType[] = [
     selected: true,
   },
 ];
+
+export const counter = 0;
