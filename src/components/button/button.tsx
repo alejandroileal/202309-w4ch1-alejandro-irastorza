@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { counter } from '../../data/data';
+import { gentlemanData } from '../../data/data';
 
 export function Button() {
   const handleClickButton = () => {
-    return '';
+    gentlemanData.forEach((user) => (user.selected = true));
   };
 
   return (
     <section className="controls">
-      <p className="info">0 gentlemen pointing at you</p>
+      <p className="info">{} gentlemen pointing at you</p>
       <button onClick={handleClickButton} className="button button--select">
         Select all
       </button>

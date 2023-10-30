@@ -1,30 +1,32 @@
-import React from 'react';
-import { GentlemanType } from '../../data/data';
+import React, { useState } from 'react';
+import { gentlemanData } from '../../data/data';
+import { GentlemanType } from '../../types/types';
 
 type Props = {
   cards: GentlemanType[];
 };
 
 export function Gentleman({ cards }: Props) {
-  const handleAddButton = (ev: SyntheticEvent) => {
-    return '😺';
-  };
+  // const handleAddButton = (ev: SyntheticEvent) => {
+  //   return '😺';
+  // };
 
-  const handleDeleteButton = () => {
-    console.log('Deleted');
+  const [newGenList, setGentList] = useState(cards);
 
-    return '😺';
+  const handleDeleteButton = (cardId: number) => {
+    const userToDelete = newGenList.filter((user) => user.id !== cardId);
+    setGentList(userToDelete);
   };
 
   return (
     <main className="main">
       <ul className="gentlemen">
-        {cards.map((card) => (
+        {newGenList.map((card) => (
           <li key={card.name} className="gentleman">
             <div className="gentleman__avatar-container">
               <img
                 className="gentleman__avatar"
-                src={'./src/img/' + card.picture}
+                src={'img/' + card.picture}
                 alt="The Fary pointing at you"
               />
               <span className="gentleman__initial">F</span>
@@ -46,12 +48,9 @@ export function Gentleman({ cards }: Props) {
                 </li>
               </ul>
             </div>
+            <i className="icon gentleman__icon fas fa-check"></i>
             <i
-              onClick={handleAddButton}
-              className="icon gentleman__icon fas fa-check"
-            ></i>
-            <i
-              onClick={handleDeleteButton}
+              onClick={() => handleDeleteButton(card.id)}
               className="icon gentleman__icon gentleman__icon--delete fas fa-times"
             ></i>
           </li>
