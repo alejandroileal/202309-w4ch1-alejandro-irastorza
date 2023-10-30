@@ -2,6 +2,7 @@ import React from 'react';
 import { Info } from '../info/info';
 import { Button } from '../button/button';
 import { Gentleman } from '../gentleman/gentleman';
+import { gentlemanData } from '../../data/data';
 
 export function App() {
   console.log('Loaded Main 😺');
@@ -10,7 +11,7 @@ export function App() {
     <div className="container">
       <Info></Info>
       <Button></Button>
-      <Gentleman></Gentleman>
+      <Gentleman cards={gentlemanData}></Gentleman>
       <p>Loaded Kitty 😺</p>
     </div>
   );

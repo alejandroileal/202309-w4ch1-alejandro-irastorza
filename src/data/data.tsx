@@ -1,4 +1,15 @@
-export const gentlemenData = [
+export type GentlemanType = {
+  id: number;
+  name: string;
+  status: string;
+  profession: string;
+  twitter: string;
+  picture: string;
+  alternativeText: string;
+  selected: boolean;
+};
+
+export const gentlemanData: GentlemanType[] = [
   {
     id: 1,
     name: 'Bertin Osborne',
