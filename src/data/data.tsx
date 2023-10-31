@@ -1,3 +1,5 @@
+import { GentlemanType } from '../types/types';
+
 export const gentlemanData: GentlemanType[] = [
   {
     id: 1,
@@ -50,3 +52,5 @@ export const gentlemanData: GentlemanType[] = [
     selected: true,
   },
 ];
+
+console.log(gentlemanData);
